@@ -1,0 +1,28 @@
+#include <SoftwareSerial.h>
+ 
+SoftwareSerial bt(2,3);
+
+void setup()
+{
+  Serial.begin(9600);
+  bt.begin(9600);
+}
+ 
+ 
+void loop()
+{ 
+ if(bt.available())
+ {
+  Serial.write("phone : ");
+  Serial.write(bt.read());
+  Serial.println();
+ }
+
+ if(Serial.available())
+ {
+  bt.write("PC : ");
+  bt.write(Serial.read());
+  bt.println();
+ }
+}
+ 

@@ -1,0 +1,19 @@
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  int val1 = analogRead(A4);
+  int val2 = analogRead(A5);
+
+ 
+  Serial.print("val1 : ");
+  Serial.print(val1*10);
+  Serial.print("\tval2 : ");
+  Serial.print(val2*10);
+  Serial.print("\n");
+  delay(100);
+}
