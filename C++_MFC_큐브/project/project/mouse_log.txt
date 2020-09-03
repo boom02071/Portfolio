@@ -1,0 +1,6 @@
+1.	Face : a / Row : 2 / Right
+2.	Face : a / Col : 2 / Down
+3.	Face : a / Row : 3 / Left
+4.	Face : a / Col : 1 / Down
+5.	Face : e / Row : 3 / Right
+6.	Face : a / Col : 2 / Down

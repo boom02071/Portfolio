@@ -1,0 +1,9 @@
+1.	Key_Up
+2.	Key_Up
+3.	Key_Right
+4.	Key_Right
+5.	Key_Right
+6.	Key_Left
+7.	Key_Left
+8.	Key_Down
+9.	Key_Down
