@@ -1,0 +1,79 @@
+<template>
+  <div id="mpp">
+    <GmapMap
+      ref="mapRef"
+      :center="center"
+      :zoom="16"
+      style="width:100vw; height:100vh"
+    >
+      <GmapMarker
+        :key="index"
+        v-for="(m, index) in markers"
+        :position="m.position"
+        :clickable="true"
+        :draggable="false"
+        @click="center = m.postion"
+      />
+    </GmapMap>
+
+    <p v-for="(apt, index) in aptlist" :key="index">
+      {{ apt.법정동 }} {{ apt.지번 }}
+    </p>
+  </div>
+</template>
+
+<script>
+import * as VueGoogleMaps from 'vue2-google-maps';
+import gmapsInit from './utils/gmaps';
+import Vue from 'vue';
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyDdaiXU3lCMEheC7MagvJ-t394bQ5iFrCY',
+    libraries: 'places',
+  },
+});
+
+export default {
+  name: 'map',
+  data() {
+    return {
+      center: {
+        lat: 37.49821,
+        lng: 126.890134,
+      },
+      markers: [
+        {
+          position: {
+            lat: 37.49821,
+            lng: 126.890134,
+          },
+        },
+        {
+          position: {
+            lat: 37.498317,
+            lng: 126.891378,
+          },
+        },
+      ],
+    };
+  },
+
+  props: {
+    aptlist: Array,
+  },
+
+  mounted() {
+    // var geocoder = new google.maps.Geocoder();
+    // geocoder.geocode(
+    //   {
+    //     location: '구로동',
+    //   },
+    //   (results, status) => {
+    //     console.log(results);
+    //     console.log(status);
+    //   }
+    // );
+  },
+  methods: {},
+};
+</script>
